@@ -27,6 +27,8 @@ class Ostoskori:
 
         if searchResult == None:
             self.ostoksetList += [Ostos(lisattava)]
+        else: 
+            searchResult.muuta_lukumaaraa(1)
 
     def poista_tuote(self, poistettava: Tuote):
         # poistaa tuotteen

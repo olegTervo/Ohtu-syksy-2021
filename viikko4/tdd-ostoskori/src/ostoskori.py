@@ -22,7 +22,11 @@ class Ostoskori:
         # lisää tuotteen
         self.ostoksetKorissa += 1
         self.koriHinta += lisattava.hinta()
-        self.ostoksetList += [Ostos(lisattava)]
+        
+        searchResult = next((o for o in self.ostoksetList if o.tuotteen_nimi() == lisattava.nimi()), None)
+
+        if searchResult == None:
+            self.ostoksetList += [Ostos(lisattava)]
 
     def poista_tuote(self, poistettava: Tuote):
         # poistaa tuotteen

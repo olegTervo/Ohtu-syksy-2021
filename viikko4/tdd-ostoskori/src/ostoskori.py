@@ -31,8 +31,10 @@ class Ostoskori:
             searchResult.muuta_lukumaaraa(1)
 
     def poista_tuote(self, poistettava: Tuote):
-        # poistaa tuotteen
-        pass
+        searchResult = next((o for o in self.ostoksetList if o.tuotteen_nimi() == poistettava.nimi()), None)
+
+        if not searchResult == None:
+            searchResult.muuta_lukumaaraa(-1)
 
     def tyhjenna(self):
         pass

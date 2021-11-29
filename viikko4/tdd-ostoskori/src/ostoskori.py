@@ -40,7 +40,9 @@ class Ostoskori:
                 searchResult.muuta_lukumaaraa(-1)        
 
     def tyhjenna(self):
-        pass
+        self.ostoksetKorissa = 0
+        self.koriHinta = 0
+        self.ostoksetList = []
         # tyhjentää ostoskorin
 
     def ostokset(self):
